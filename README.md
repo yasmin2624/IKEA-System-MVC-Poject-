@@ -70,6 +70,7 @@ Or press F5 in Visual Studio.
 
 IKEA.PL/
 
+IKEA.PL/
 ├── Controllers/
 │   ├── DepartmentController.cs
 │   ├── EmployeeController.cs
@@ -91,41 +92,34 @@ IKEA.PL/
 │   └── js/
 └── Program.cs
 
+
 ---
 
-##🔐 User ↔ Role Assignment (Identity Integration)
+###🔐 User ↔ Role Assignment (Identity Integration)
 The system uses ASP.NET Identity with these main tables:
 
 
-AspNetUsers
+- 🔹AspNetUsers
 
-
-AspNetRoles
-
+- 🔹AspNetRoles
 
 AspNetUserRoles (relationship between users and roles)
 
-
 Assigning a role to a user is done using:
 
-
-await _userManager.AddToRoleAsync(user, roleName);
+-await _userManager.AddToRoleAsync(user, roleName);
 To display user roles in the index page:
 
+-await _userManager.IsInRoleAsync(user, roleName);
 
-await _userManager.IsInRoleAsync(user, roleName);
-💡 Future Improvements
-Add permission-level management (per-role authorization)
-
-Implement AJAX-based updates for smoother UX
-
-Add search, filters, and pagination in tables
-
-Generate downloadable reports (PDF / Excel)
-
-Enhance UI consistency and responsive behavior
+###💡 Future Improvements
+- 🔹Add permission-level management (per-role authorization)
+- 🔹Implement AJAX-based updates for smoother UX
+- 🔹Add search, filters, and pagination in tables
+- 🔹Generate downloadable reports (PDF / Excel)
+- 🔹Enhance UI consistency and responsive behavior
 
 
-🏁 License
+###🏁 License
 This project is created for educational purposes and internal training.
 You may use it for learning, modification, and practice freely.
