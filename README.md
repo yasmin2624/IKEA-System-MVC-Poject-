@@ -90,8 +90,6 @@ IKEA.PL/
     js/
   Program.cs
 
-
-
 ---
 
 ### 🔐 User ↔ Role Assignment (Identity Integration)
