@@ -72,30 +72,49 @@ IKEA.PL/
 
 IKEA.PL/
 ├── Controllers/
+
 │   ├── DepartmentController.cs
+
 │   ├── EmployeeController.cs
+
 │   ├── RoleController.cs
+
 │   ├── UserRoleController.cs
+
 │   └── AccountController.cs
+
 ├── Views/
+
 │   ├── Department/
+
 │   ├── Employee/
+
 │   ├── Role/
+
 │   └── UserRole/
+
 ├── ViewModels/
+
 │   ├── DepartmentViewModels/
+
 │   ├── EmployeeViewModels/
+
 │   ├── RoleViewModels/
+
 │   └── UserRoleViewModels/
+
 ├── wwwroot/
+
 │   ├── css/
+
 │   └── js/
+
 └── Program.cs
 
 
 ---
 
-###🔐 User ↔ Role Assignment (Identity Integration)
+### 🔐 User ↔ Role Assignment (Identity Integration)
 The system uses ASP.NET Identity with these main tables:
 
 
@@ -112,7 +131,7 @@ To display user roles in the index page:
 
 -await _userManager.IsInRoleAsync(user, roleName);
 
-###💡 Future Improvements
+### 💡 Future Improvements
 - 🔹Add permission-level management (per-role authorization)
 - 🔹Implement AJAX-based updates for smoother UX
 - 🔹Add search, filters, and pagination in tables
@@ -120,6 +139,6 @@ To display user roles in the index page:
 - 🔹Enhance UI consistency and responsive behavior
 
 
-###🏁 License
+### 🏁 License
 This project is created for educational purposes and internal training.
 You may use it for learning, modification, and practice freely.
