@@ -66,28 +66,30 @@ dotnet run
 Or press F5 in Visual Studio.
 
 ---
-📁 Project Structure
+## 📁 Project Structure
+
 IKEA.PL/
 ├── Controllers/
-│ ├── DepartmentController.cs
-│ ├── EmployeeController.cs
-│ ├── RoleController.cs
-│ ├── UserRoleController.cs
-│ └── AccountController.cs
+│   ├── DepartmentController.cs
+│   ├── EmployeeController.cs
+│   ├── RoleController.cs
+│   ├── UserRoleController.cs
+│   └── AccountController.cs
 ├── Views/
-│ ├── Department/
-│ ├── Employee/
-│ ├── Role/
-│ └── UserRole/
+│   ├── Department/
+│   ├── Employee/
+│   ├── Role/
+│   └── UserRole/
 ├── ViewModels/
-│ ├── DepartmentViewModels/
-│ ├── EmployeeViewModels/
-│ ├── RoleViewModels/
-│ └── UserRoleViewModels/
+│   ├── DepartmentViewModels/
+│   ├── EmployeeViewModels/
+│   ├── RoleViewModels/
+│   └── UserRoleViewModels/
 ├── wwwroot/
-│ ├── css/
-│ └── js/
+│   ├── css/
+│   └── js/
 └── Program.cs
+
 
 ---
 
