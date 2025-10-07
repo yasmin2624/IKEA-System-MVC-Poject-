@@ -1,0 +1,12 @@
+﻿global using IKEA.DAL.Models;
+global using IKEA.DAL.Models.Depratments;
+global using IKEA.DAL.Presistance.Data;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using IKEA.DAL.Models.Shared;
+global using IKEA.DAL.Models.Shared.Enums;
+global using IKEA.DAL.Presistance.Repositories.GeneralInterfaces;
+global using IKEA.DAL.Presistance.Repositories.GeneralInterfaces;
+global using IKEA.DAL.Presistance.Repositories.SharedGenaric;
+global using IKEA.DAL.Presistance.Repositories.Departments;
+global using IKEA.DAL.Presistance.Repositories.Employees;

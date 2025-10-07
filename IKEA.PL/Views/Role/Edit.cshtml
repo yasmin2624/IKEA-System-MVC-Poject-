@@ -1,0 +1,25 @@
+﻿@model IKEA.PL.ViewsModels.RoleViewModels.RoleViewModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-center align-content-center mt-3">
+    <h1 class="col-8 my-4 text-center">Edit Role</h1>
+
+    <form class="col-8" method="post" asp-action="Edit" asp-controller="Role">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="form-group">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" placeholder="Enter new role name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="mt-4 text-center">
+            <input class="btn btn-primary" type="submit" value="Save Changes" />
+            <a class="btn btn-outline-dark" asp-action="Index">Back to list</a>
+        </div>
+    </form>
+</div>
+

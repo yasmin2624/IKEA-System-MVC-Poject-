@@ -1,0 +1,25 @@
+﻿@model IKEA.PL.ViewsModels.RoleViewModels.RoleViewModel
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Role Details</h2>
+
+    <div class="card shadow p-4">
+        <dl class="row">
+            <dt class="col-sm-3">Role ID</dt>
+            <dd class="col-sm-9">@Model.Id</dd>
+
+            <dt class="col-sm-3">Role Name</dt>
+            <dd class="col-sm-9">@Model.Name</dd>
+        </dl>
+
+        <div class="text-center mt-4">
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+            <a asp-action="Index" class="btn btn-secondary">Back to list</a>
+        </div>
+    </div>
+</div>
+
