@@ -35,10 +35,12 @@ The system also integrates **ASP.NET Identity** for user authentication and auth
 
 ## 🚀 Getting Started
 
+
 ### 1️⃣ Clone the Repository
 
 git clone https://github.com/yasmin2624/IKEA-System-MVC-Poject-.git
 cd IKEA-System-MVC-Poject-
+
 
 
 2️⃣ Configure Database Connection
@@ -49,6 +51,7 @@ Edit your appsettings.json file and update the connection string:
 }
 
 
+
 3️⃣ Apply Migrations
 Run the following commands in Visual Studio Package Manager Console or terminal:
 
@@ -56,47 +59,74 @@ Add-Migration InitialCreate
 Update-Database
 
 
+
 4️⃣ Run the Application
 
 dotnet run
 Or press F5 in Visual Studio.
 
-
+--
 📁 Project Structure
 
 IKEA.PL/
+
 ├── Controllers/
+
 │   ├── DepartmentController.cs
+
 │   ├── EmployeeController.cs
+
 │   ├── RoleController.cs
+
 │   ├── UserRoleController.cs
+
 │   └── AccountController.cs
+
 ├── Views/
+
 │   ├── Department/
+
 │   ├── Employee/
+
 │   ├── Role/
+
 │   └── UserRole/
+
 ├── ViewModels/
+
 │   ├── DepartmentViewModels/
+
 │   ├── EmployeeViewModels/
+
 │   ├── RoleViewModels/
+
 │   └── UserRoleViewModels/
+
 ├── wwwroot/
+
 │   ├── css/
+
 │   └── js/
+
 └── Program.cs
 
+--
 
 🔐 User ↔ Role Assignment (Identity Integration)
 The system uses ASP.NET Identity with these main tables:
 
+
 AspNetUsers
+
 
 AspNetRoles
 
+
 AspNetUserRoles (relationship between users and roles)
 
+
 Assigning a role to a user is done using:
+
 
 await _userManager.AddToRoleAsync(user, roleName);
 To display user roles in the index page:
