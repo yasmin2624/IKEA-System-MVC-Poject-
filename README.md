@@ -69,26 +69,27 @@ Or press F5 in Visual Studio.
 ## 📁 Project Structure
 
 IKEA.PL/
-├── Controllers/
-│   ├── DepartmentController.cs
-│   ├── EmployeeController.cs
-│   ├── RoleController.cs
-│   ├── UserRoleController.cs
-│   └── AccountController.cs
-├── Views/
-│   ├── Department/
-│   ├── Employee/
-│   ├── Role/
-│   └── UserRole/
-├── ViewModels/
-│   ├── DepartmentViewModels/
-│   ├── EmployeeViewModels/
-│   ├── RoleViewModels/
-│   └── UserRoleViewModels/
-├── wwwroot/
-│   ├── css/
-│   └── js/
-└── Program.cs
+  Controllers/
+    DepartmentController.cs
+    EmployeeController.cs
+    RoleController.cs
+    UserRoleController.cs
+    AccountController.cs
+  Views/
+    Department/
+    Employee/
+    Role/
+    UserRole/
+  ViewModels/
+    DepartmentViewModels/
+    EmployeeViewModels/
+    RoleViewModels/
+    UserRoleViewModels/
+  wwwroot/
+    css/
+    js/
+  Program.cs
+
 
 
 ---
