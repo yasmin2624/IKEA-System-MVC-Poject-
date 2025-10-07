@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Assign Role to User";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Assign Role to User</h2>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+
+    <form method="post" asp-action="AssignRole">
+        <div class="form-group mb-3">
+            <label>Select User</label>
+            <select name="userId" class="form-select">
+                <option value="">-- Choose User --</option>
+                @foreach (var user in ViewBag.Users)
+                {
+                    <option value="@user.Id">@user.UserName (@user.Email)</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group mb-3">
+            <label>Select Role</label>
+            <select name="roleId" class="form-select">
+                <option value="">-- Choose Role --</option>
+                @foreach (var role in ViewBag.Roles)
+                {
+                    <option value="@role.Id">@role.Name</option>
+                }
+            </select>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Assign Role</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,116 @@
+﻿@model List<IKEA.PL.ViewsModels.UserRoleViewModels.UserRoleViewModel>
+@{
+    ViewData["Title"] = "Manage User Roles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Manage User Roles</h2>
+    <div class="d-flex justify-content-end mb-3">
+        <a asp-controller="UserRole" asp-action="AssignRole" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i> Assign New Role
+        </a>
+    </div>
+
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+
+    <table class="table table-bordered table-striped align-middle text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>User Name</th>
+                <th>Assigned Roles</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                var assignedRoles = user.Roles.Where(r => r.IsSelected).Select(r => r.RoleName).ToList();
+
+                <tr>
+                    <td>@user.UserName</td>
+                    <td>
+                        @if (assignedRoles.Any())
+                        {
+                            <span class="badge bg-success">@string.Join(", ", assignedRoles)</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">No Roles Assigned</span>
+                        }
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#assignRoleModal"
+                                data-userid="@user.UserId"
+                                data-username="@user.UserName"
+                                data-roles='@System.Text.Json.JsonSerializer.Serialize(user.Roles)'>
+                            Edit Roles
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- ✅ Modal -->
+<div class="modal fade" id="assignRoleModal" tabindex="-1" aria-labelledby="assignRoleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form method="post" asp-action="UpdateUserRoles">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="assignRoleModalLabel">Edit Roles</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <input type="hidden" id="modalUserId" name="userId" />
+
+                    <h5 class="mb-3">User: <span id="modalUserName" class="text-primary"></span></h5>
+
+                    <div id="rolesContainer" class="d-flex flex-wrap gap-3"></div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-success">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const assignRoleModal = document.getElementById('assignRoleModal');
+
+        assignRoleModal.addEventListener('show.bs.modal', event => {
+            const button = event.relatedTarget;
+            const userId = button.getAttribute('data-userid');
+            const userName = button.getAttribute('data-username');
+            const roles = JSON.parse(button.getAttribute('data-roles'));
+
+            document.getElementById('modalUserId').value = userId;
+            document.getElementById('modalUserName').textContent = userName;
+
+            const container = document.getElementById('rolesContainer');
+            container.innerHTML = '';
+
+            roles.forEach(role => {
+                const div = document.createElement('div');
+                div.className = 'form-check';
+                div.innerHTML = `
+                    <input class="form-check-input" type="checkbox" name="selectedRoles" value="${role.RoleName}" ${role.IsSelected ? 'checked' : ''}>
+                    <label class="form-check-label">${role.RoleName}</label>
+                `;
+                container.appendChild(div);
+            });
+        });
+    </script>
+}
