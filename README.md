@@ -70,7 +70,7 @@ Or press F5 in Visual Studio.
 
 IKEA.PL/
 
-  Controllers/
+ - Controllers/
 
     DepartmentController.cs
     
@@ -82,7 +82,7 @@ IKEA.PL/
     
     AccountController.cs
   
-  Views/
+ - Views/
   
     Department/
     
@@ -92,7 +92,7 @@ IKEA.PL/
     
     UserRole/
   
-  ViewModels/
+ - ViewModels/
   
     DepartmentViewModels/
     
@@ -102,13 +102,13 @@ IKEA.PL/
     
     UserRoleViewModels/
  
-  wwwroot/
+ - wwwroot/
   
     css/
   
     js/
   
-  Program.cs
+ - Program.cs
 
 ---
 
