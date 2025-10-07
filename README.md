@@ -67,50 +67,27 @@ Or press F5 in Visual Studio.
 
 ---
 📁 Project Structure
-
-IKEA.PL/
-
 IKEA.PL/
 ├── Controllers/
-
-│   ├── DepartmentController.cs
-
-│   ├── EmployeeController.cs
-
-│   ├── RoleController.cs
-
-│   ├── UserRoleController.cs
-
-│   └── AccountController.cs
-
+│ ├── DepartmentController.cs
+│ ├── EmployeeController.cs
+│ ├── RoleController.cs
+│ ├── UserRoleController.cs
+│ └── AccountController.cs
 ├── Views/
-
-│   ├── Department/
-
-│   ├── Employee/
-
-│   ├── Role/
-
-│   └── UserRole/
-
+│ ├── Department/
+│ ├── Employee/
+│ ├── Role/
+│ └── UserRole/
 ├── ViewModels/
-
-│   ├── DepartmentViewModels/
-
-│   ├── EmployeeViewModels/
-
-│   ├── RoleViewModels/
-
-│   └── UserRoleViewModels/
-
+│ ├── DepartmentViewModels/
+│ ├── EmployeeViewModels/
+│ ├── RoleViewModels/
+│ └── UserRoleViewModels/
 ├── wwwroot/
-
-│   ├── css/
-
-│   └── js/
-
+│ ├── css/
+│ └── js/
 └── Program.cs
-
 
 ---
 
@@ -118,18 +95,18 @@ IKEA.PL/
 The system uses ASP.NET Identity with these main tables:
 
 
-- 🔹AspNetUsers
+- AspNetUsers
 
-- 🔹AspNetRoles
+- AspNetRoles
 
 AspNetUserRoles (relationship between users and roles)
 
 Assigning a role to a user is done using:
 
--await _userManager.AddToRoleAsync(user, roleName);
+- await _userManager.AddToRoleAsync(user, roleName);
 To display user roles in the index page:
 
--await _userManager.IsInRoleAsync(user, roleName);
+- await _userManager.IsInRoleAsync(user, roleName);
 
 ### 💡 Future Improvements
 - 🔹Add permission-level management (per-role authorization)
